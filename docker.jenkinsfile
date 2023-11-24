@@ -1,8 +1,8 @@
 pipeline {
   agent any
   environment {
-        registry = "lodagala/hello-world"
-        registryCredential = 'lodagala'
+        registry = "vsiraparapu/hello-world"
+        registryCredential = 'docker-hub-jenkins-creds'
         dockerImage = ''
     }
   stages {
@@ -30,7 +30,19 @@ pipeline {
             }
         }
     }
-
+    // stage('Deploy k8s') {
+    //     steps{
+    //         script {
+    //             sh """
+    //                 export KUBECONFIG=~/.kube/config
+    //                 kubectl config get-contexts
+    //                 kubectl config use-context kubernetes-admin@kubernetes
+    //                kubectl apply -f deploy-k8s/hello-world-deploy.yaml
+    //                kubectl apply -f deploy-k8s/hello-world-svc.yaml
+    //             """
+    //         }
+    //     }
+    // }
     // stage('imageBuild'){
     //     steps {
     //         script {
