@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
         registry = "vsiraparapu/hello-world"
-        registryCredential = 'docker-hub-jenkins-creds'
+        registryCredential = 'lodagala'
         dockerImage = ''
     }
   stages {
