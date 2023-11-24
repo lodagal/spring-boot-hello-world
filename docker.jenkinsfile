@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-        registry = "vsiraparapu/hello-world"
+        registry = "lodagala/hello-world"
         registryCredential = 'lodagala'
         dockerImage = ''
     }
